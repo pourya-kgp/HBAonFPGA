@@ -5,18 +5,18 @@ Implementation of Hardware Bee Algorithm (HBA) on FPGA for solving the Traveling
 This project implements a Hardware Bee Algorithm on FPGA for solving the Traveling Salesperson Problem (TSP).
 The system followed these main steps:
 
-1. **Algorithm Implementation**
-   The project implements several well-known bee colony algorithms as faithfully as possible: 
-   - **BA (Bee Algorithm)**
-   - **BCO (Bee Colony Optimization - Constructive)**
-   - **BCOi (Bee Colony Optimization improvement)**
-   - **CABC (Combinatorial Artificial Bee Colony)**
-   Each algorithm supports two different local optimization methods:
-   - **2-Opt** : 2-Opt for edge exchange.
-   - **GSTM**  : Greedy Sub-Tour Mutation.  
-   For the BCOs algorithm, two types of backward pass methods are available:
-   - **Nonloyal** : Recruitment based on fitness probabilities.
-   - **Loyal**    : Loyalty-based recruitment with probabilistic retention.
+1. **Algorithm Implementation**  
+   The project implements several well-known bee colony algorithms as faithfully as possible:  
+	   - **BA (Bee Algorithm)**  
+	   - **BCO (Bee Colony Optimization - Constructive)**  
+	   - **BCOi (Bee Colony Optimization improvement)**  
+	   - **CABC (Combinatorial Artificial Bee Colony)**  
+   Each algorithm supports two different local optimization methods:  
+	   - **2-Opt** : 2-Opt for edge exchange.  
+	   - **GSTM**  : Greedy Sub-Tour Mutation.  
+   For the BCOs algorithm, two types of backward pass methods are available:  
+	   - **Nonloyal** : Recruitment based on fitness probabilities.  
+	   - **Loyal**    : Loyalty-based recruitment with probabilistic retention.  
    Additionally, the project includes scripts to extract TSP data from the original Fortran-based database,
    as well as scripts to load TSP instance data from a MAT-file (which is extremely faster than Fortran-based extraction).
 2. **Algorithm Evaluation**  
@@ -99,7 +99,7 @@ Key VHDL files and their corresponding schematic/FSM charts are detailed below:
 
 ### HBA for TSP (Hardware Bee Algorithm for the Traveling Salesperson Problem)
 - `Gen_HBA.vhd`    : HBA top module generic core for solving the TSP.
-- `Gen_HBA_TB.vhd` : Test bench for the HBA core.
+- `Gen_HBA_TB.vhd` : Test bench for the HBA core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/01_HBA_Schematic.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/02_HBA_Semi-FSM_Chart.jpg
@@ -107,58 +107,58 @@ Key VHDL files and their corresponding schematic/FSM charts are detailed below:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/04_Sorting_Structure_and_Connections.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/05_Simplified_Sorting_Permitions_Structure.jpg
 - `Gen_Sort_Permit.vhd`    : Generic core for sorting permissions.
-- `Gen_Sort_Permit_TB.vhd` : Test bench for the sorting permissions core.
+- `Gen_Sort_Permit_TB.vhd` : Test bench for the sorting permissions core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/06_Sorting_Permitions_Structures.jpg
 - `Gen_Bee_Sync.vhd` : Generic core simulating honeybee behavior, holding and modifying the TSP path.
-- `Gen_Bee_TB.vhd`   : Test bench for the honeybee behavior simulation core.
+- `Gen_Bee_TB.vhd`   : Test bench for the honeybee behavior simulation core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/07_Bee_Semi-FSM_Chart.jpg
 - `Gen_Local_Search.vhd`    : Generic core for 2-Opt local search.
-- `Gen_Local_Search_TB.vhd` : Test bench for the 2-Opt local search core.
+- `Gen_Local_Search_TB.vhd` : Test bench for the 2-Opt local search core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/08_2-Opt_Local_Optimization_Semi-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/09_Bee_and_Local_Optimization_Units_Connections.jpg
 - `Gen_RNG_City_Set.vhd`    : Generic core for generating two pseudo-random cities' indexes.
-- `Gen_RNG_City_Set_TB.vhd` : Test bench for generating two pseudo-random cities' indexes.
+- `Gen_RNG_City_Set_TB.vhd` : Test bench for generating two pseudo-random cities' indexes.  
 	Related Figures: 
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/10_Random_Address_Generator_Unit_for_Two_Cities_Indexes_Semi-FSM_Chart.jpg
 - `Gen_LFSR.vhd`    : Generic core for an 8-bit Linear Feedback Shift Register (LFSR).
-- `Gen_LFSR_TB.vhd` : Test bench for the 8-bit LFSR core.
+- `Gen_LFSR_TB.vhd` : Test bench for the 8-bit LFSR core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/11_Random_Address_Generator_Unit_within_the_Range_of_the_Cities_Number_Structure.jpg
 - `Gen_Update_Tour_V1.vhd` : Generic core to update the TSP tour after a successful local 2-Opt search (Version 1).
 - `Gen_Update_Tour_V2.vhd` : Generic core to update the TSP tour after a successful local 2-Opt search (Version 2).
-- `Gen_Update_Tour_TB.vhd` : Test bench for the tour update core.
+- `Gen_Update_Tour_TB.vhd` : Test bench for the tour update core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/12_Local_Optimization_Update_and_Bee_Modules_Connections.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/13_Update_Unit_V1_V2_Semi-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/14_Update_Unit_V1_V2_Full-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/15_Rotation_Procedure_for_a_Sub-Tour_in_the_2-Opt_Method.jpg
 - `Gen_Nearest_Neighbor_Tour.vhd`    : Generic core for determining the Nearest Neighbor tour for the TSP.
-- `Gen_Nearest_Neighbor_Tour_TB.vhd` : Test bench for the Nearest Neighbor tour core.
+- `Gen_Nearest_Neighbor_Tour_TB.vhd` : Test bench for the Nearest Neighbor tour core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/16_Nearest_Neighbor_Tour_Unit_Semi-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/17_Nearest_Neighbor_Tour_Unit_Modules1.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/18_Nearest_Neighbor_Tour_Unit_Modules2.jpg
 - `Gen_Nearest_Neighbor.vhd`    : Generic core for specifying the nearest neighbor from the current city.
-- `Gen_Nearest_Neighbor_TB.vhd` : Test bench for the nearest neighbor specification core.
+- `Gen_Nearest_Neighbor_TB.vhd` : Test bench for the nearest neighbor specification core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/19_Nearest_Neighbor_Unit_Structure.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/20_Nearest_Neighbor_Unit_Structure_and_Signals.jpg
 - `Gen_Nearest_City.vhd`    : Generic core for specifying and saving the nearest city from the current city in the NN search.
-- `Gen_Nearest_City_TB.vhd` : Test bench for the nearest city specification core.
+- `Gen_Nearest_City_TB.vhd` : Test bench for the nearest city specification core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/21_Nearest_City_Unit_Structure.jpg
 - `Gen_Tour_Sync.vhd` : Generic core to hold and update the TSP path.
-- `Gen_Tour_TB.vhd`   : Test bench for the TSP path and update core.
+- `Gen_Tour_TB.vhd`   : Test bench for the TSP path and update core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/22_Tour_Unit_Semi-FSM_Chart.jpg
 - `Gen_Addr_Calc.vhd`    : Generic core to calculate the address for two cities' distance in the ROM (distance matrix).
-- `Gen_Addr_Calc_TB.vhd` : Test bench for the address calculator core.
+- `Gen_Addr_Calc_TB.vhd` : Test bench for the address calculator core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/23_Address_Calculator_Unit_Structure.jpg
-- `Gen_Addr_Formula.vhd` : Generic core to calculate the address for two cities' distance in the ROM (distance matrix).
+- `Gen_Addr_Formula.vhd` : Generic core to calculate the address for two cities' distance in the ROM (distance matrix).  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/24_Address_Formula_Calculator_Unit_Semi-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/25_Address_Formula_Calculator_Unit_Structure.jpg
@@ -167,7 +167,7 @@ Key VHDL files and their corresponding schematic/FSM charts are detailed below:
 - `Gen_Index_ij_Behavioral.vhd` : Generic core for sequentially selecting two RAM addresses (complete cases).
 - `Gen_Index_ij_Structural.vhd` : Generic core for sequentially selecting two RAM addresses, including a LAST_I case. (Gen_Index_ij + case LAST_I)
 - `Gen_Index_ij.vhd`            : Generic core for sequentially selecting two RAM addresses.
-- `Gen_Index_ij_TB.vhd`         : Test bench for sequentially selecting two RAM addresses.
+- `Gen_Index_ij_TB.vhd`         : Test bench for sequentially selecting two RAM addresses.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/28_Sequential_Address_Counting_for_Selecting_Two_Cities_Indexes.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/29_Sequential_Address_Generator_Unit_for_Selecting_Two_Cities_Indexes_Structure.jpg
@@ -177,26 +177,26 @@ Key VHDL files and their corresponding schematic/FSM charts are detailed below:
 								  
 ### Distance Matrix Constructor on RAM
 - `Gen_RAM_Heuristic_Data_Loader.vhd`    : Top module generic core to load an internal/external RAM with the distance matrix information.
-- `Gen_RAM_Heuristic_Data_Loader_TB.vhd` : Test bench for loading an internal/external RAM with distance matrix information.
+- `Gen_RAM_Heuristic_Data_Loader_TB.vhd` : Test bench for loading an internal/external RAM with distance matrix information.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/33_Distance_Matrix_Constructor_on_RAM_Semi-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/34_Distance_Matrix_Constructor_on_RAM_Modules.jpg
 - `Gen_Heuristic_Data_Constructor_P1.vhd` : Generic core to construct the distance matrix on the RAM (RAM address and corresponding distance) utilizing synchronous single port ROMs
 - `Gen_Heuristic_Data_Constructor_P2.vhd` : Generic core to construct the distance matrix on the RAM (RAM address and corresponding distance) utilizing synchronous dual port ROMs
-- `Gen_Heuristic_Data_Constructor_TB.vhd` : Test bench for the distance matrix constructor on the RAM.
+- `Gen_Heuristic_Data_Constructor_TB.vhd` : Test bench for the distance matrix constructor on the RAM.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/35_Distance_Matrix_Constructor_with_Dual-Port_ROMs_Structure.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/36_Distance_Matrix_Constructor_with_Dual-Port_ROMs_Structure_and_Signals.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/37_Distance_Matrix_Constructor_with_Single-Port_ROMs_Structure.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/38_Distance_Matrix_Constructor_with_Single-Port_ROMs_Structure_and_Signals.jpg
 - `Gen_Index_ij_BRAM.vhd`    : Generic core for sequentially selecting two RAM addresses.
-- `Gen_Index_ij_BRAM_TB.vhd` : Test bench for sequentially selecting two RAM addresses.
+- `Gen_Index_ij_BRAM_TB.vhd` : Test bench for sequentially selecting two RAM addresses.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/39_Sequential_Address_Generator_Unit_for_Two_Cities_Indexes_to_Utilize_for_Memory_Structure.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/40_Sequential_Address_Generator_Unit_for_Two_Cities_Indexes_to_Utilize_for_Memory_Structure_and_Signals.jpg
 - `Gen_Euclidean_Distance_Xilinx.vhd` : Generic core to calculate the Euclidean distance between two points on a 2D plane (using Xilinx SQRT IP core).
 - `Gen_Euclidean_Distance.vhd`        : Generic core to calculate the Euclidean distance between two points on a 2D plane (using Altera SQRT IP core).
-- `Gen_Euclidean_Distance_TB.vhd`     : Test bench for the Euclidean distance calculator core.
+- `Gen_Euclidean_Distance_TB.vhd`     : Test bench for the Euclidean distance calculator core.  
 	Related Figures:
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/41_Eclidean_Distance_Calculator_Unit_for_Xilinx_FPGAs_Semi-FSM_Chart.jpg
 	- https://github.com/pourya-kgp/HBAonFPGA/blob/main/Figures/42_Eclidean_Distance_Calculator_Unit_for_Altera_FPGAs_Semi-FSM_Chart.jpg
@@ -222,10 +222,10 @@ changes must be made in the `Gen_HBA.vhd` and `Gen_HBA_TB.vhd` files. These chan
   for instances with 65 to 91 cities, use 12 bits; and for instances with more cities up to 254, increase the address width accordingly.
 - Update the constant `Cities` to match the number of cities in the TSP instance.
 - In the test bench file, the generic address width is named `addr_width` and the constant holding the number of cities is `city_num`;
-  apply the same changes there.
+  apply the same changes there.  
 With these modifications, TSP instances containing up to 254 cities can be tested. Furthermore, as in the BA (Bee Algorithm), the number
 of elite and selected local searches can be set using the constants `Recruited_Bees_Elite` and `Recruited_Bees_Selected`, respectively. 
-Additionally, the iteration count and local Search (is) parameters are specified using the constants `Iterations` and `Local_Iter`. 
+Additionally, the iteration count and local Search (is) parameters are specified using the constants `Iterations` and `Local_Iter`.  
 All default configurations are set for the *eil51* instance and ready for testing.
 ****************************************************************************************************
 ## Directory Structure
@@ -248,10 +248,10 @@ This repository is organized as follows:
    - `~/VHDL/`                    – Contains MATLAB files related to VHDL and FPGA implementation.
         - `~/Output/`             – Contains the constructed files that are used in the VHDL test benches and for ROM construction.
 - `VHDL/`                         – Contains the main RTL and test bench files for implementing the HBA on the FPGA.
-- `VHDL/Basics`                   – Contains basic HDL files for implementing fundamental digital components used in the structural-level design.
-- `VHDL/RXM`                      – Contains various memory modules (RAM/ROM) for the FPGA. Some of these modules were used in the project,
+   - `~/Basics`                   – Contains basic HDL files for implementing fundamental digital components used in the structural-level design.
+   - `~/RXM`                      – Contains various memory modules (RAM/ROM) for the FPGA. Some of these modules were used in the project,
 									while others are provided for diversity.
-- `VHDL/TSP`                      – Contains VHDL or text files related to TSP instances, which were used for implementation or in test benches
+   - `~/TSP`                      – Contains VHDL or text files related to TSP instances, which were used for implementation or in test benches
 									for application verification.
 ****************************************************************************************************
 ## Databases
