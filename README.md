@@ -223,10 +223,13 @@ changes must be made in the `Gen_HBA.vhd` and `Gen_HBA_TB.vhd` files. These chan
 - Update the constant `Cities` to match the number of cities in the TSP instance.
 - In the test bench file, the generic address width is named `addr_width` and the constant holding the number of cities is `city_num`;
   apply the same changes there.  
-With these modifications, TSP instances containing up to 254 cities can be tested. Furthermore, as in the BA (Bee Algorithm), the number
-of elite and selected local searches can be set using the constants `Recruited_Bees_Elite` and `Recruited_Bees_Selected`, respectively. 
-Additionally, the iteration count and local Search (is) parameters are specified using the constants `Iterations` and `Local_Iter`.  
-All default configurations are set for the *eil51* instance and ready for testing.
+With these modifications, TSP instances containing up to 254 cities can be tested.
+
+Furthermore, as in the BA (Bee Algorithm), the number of elite and selected local searches can be set using the constants 
+`Recruited_Bees_Elite` and `Recruited_Bees_Selected`, respectively. Additionally, the iteration count and local Search (is) 
+parameters are specified using the constants `Iterations` and `Local_Iter`.  
+
+Note: All default configurations are set for the *eil51* instance and ready for testing.
 ****************************************************************************************************
 ## Directory Structure
 This repository is organized as follows:
